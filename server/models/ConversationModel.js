@@ -1,6 +1,6 @@
-const mongoose = require('mongoose');
+const mongoose = require('mongoose')
 
-const MessageSchema = mongoose.Schema({
+const messageSchema = new mongoose.Schema({
     text: {
         type: String,
         default: ""
@@ -13,28 +13,44 @@ const MessageSchema = mongoose.Schema({
         type: String,
         default: ""
     },
-    senn: {
+    seen: {
         type: Boolean,
         default: false
+    },
+    msgByUserId: {
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'User'
     }
-}, { timestamps: true })
+}, {
+    timestamps: true
+})
 
-const ConversationSchema = mongoose.Schema({
+const conversationSchema = new mongoose.Schema({
     sender: {
-        type: mongoose.Types.ObjectId,
-        ref: 'user'
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'User'
     },
     receiver: {
-        type: mongoose.Types.ObjectId,
-        ref: 'user'
+        type: mongoose.Schema.ObjectId,
+        required: true,
+        ref: 'User'
     },
-    messages: {
-        type: mongoose.Types.ObjectId,
-        ref: 'message'
-    }
-}, { timestapms: true })
+    messages: [
+        {
+            type: mongoose.Schema.ObjectId,
+            ref: 'Message'
+        }
+    ]
+}, {
+    timestamps: true
+})
 
-const MessageModel = mongoose.model('Message', MessageSchema)
-const ConversationModel = mongoose.model('Conversation', ConversationSchema)
+const MessageModel = mongoose.model('Message', messageSchema)
+const ConversationModel = mongoose.model('Conversation', conversationSchema)
 
-module.exports = { ConversationModel, MessageModel }
+module.exports = {
+    MessageModel,
+    ConversationModel
+}
