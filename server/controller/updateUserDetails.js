@@ -2,9 +2,7 @@ const getUserDetailsFromToken = require('../helpers/getUserDetailFromToken');
 const UserModel = require('../models/UserModel');
 async function updateUserDetails(req, res) {
     try {
-        const token = req.cookies.token || "";
-
-
+        const token = req.headers.authorization.split(" ")[1]; // Extract token from headers
         const user = await getUserDetailsFromToken(token);
 
         const { name, profile_pic } = req.body;
