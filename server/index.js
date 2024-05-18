@@ -6,10 +6,15 @@ const router = require('./routes/index')
 const cookiesParser = require('cookie-parser')
 const { app, server } = require('./socket/index')
 //const app = express();
+// app.use(cors({
+//     origin: true, // Allow any origin
+//     credentials: true // Enable cookies to be sent
+// }));
+
 app.use(cors({
-    origin: true, // Allow any origin
-    credentials: true // Enable cookies to be sent
-}));
+    origin: process.env.FRONTEND_URL,
+    credentials: true
+}))
 app.use(express.json());
 app.use(cookiesParser());
 const port = process.env.PORT || 8000;
