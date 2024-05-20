@@ -12,10 +12,15 @@ const app = express()
 const server = http.createServer(app);
 const io = new Server(server, {
     cors: {
-        origin: true, // Adjust the origin as needed
+        origin: 'https://chatapp-seven-red.vercel.app', // Adjust the origin as needed
         credentials: true
     }
 });
+
+// app.use(cors({
+//     origin: true,
+//     credentials: true
+// }));
 
 io.use(async (socket, next) => {
     try {
