@@ -25,13 +25,11 @@ async function registerUser(req, res) {
             emailVerificationResponse = await axios.get(hunterUrl);
         } catch (err) {
             if (err.response && err.response.status === 400) {
-                console.error("Invalid email address:", err.response.data);
                 return res.status(400).json({
                     message: "Invalid email address",
                     error: true
                 });
             } else {
-                console.error("Email verification error:", err.response ? err.response.data : err.message);
                 return res.status(500).json({
                     message: "Email verification failed",
                     error: true
