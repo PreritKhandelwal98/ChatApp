@@ -37,12 +37,10 @@ A real-time chat application built using React for the frontend, Node.js for the
 
 3. Create a `.env` file in the `server` directory and add the following environment variables:
    ```env
-   PORT=5000
+   PORT=9100
    MONGO_URI=your_mongo_db_connection_string
    JWT_SECRET=your_jwt_secret
-   CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
-   CLOUDINARY_API_KEY=your_cloudinary_api_key
-   CLOUDINARY_API_SECRET=your_cloudinary_api_secret
+   HUNTER_API=your_hunter_api_key
    ```
 
 4. Start the backend server:
@@ -64,7 +62,8 @@ A real-time chat application built using React for the frontend, Node.js for the
 
 3. Create a `.env` file in the `client` directory and add the following environment variable:
    ```env
-   REACT_APP_BACKEND_URL=http://localhost:5000
+   REACT_APP_BACKEND_URL=http://localhost:9100
+   REACT_APP_CLOUDINARY_CLOUD_NAME=your_cloudinary_cloud_name
    ```
 
 4. Start the frontend development server:
