@@ -27,7 +27,7 @@ A real-time chat application built using React for the frontend, Node.js for the
 1. Clone the repository:
    ```bash
    git clone https://github.com/yourusername/chatapp.git
-   cd chatapp/backend
+   cd chatapp/server
    ```
 
 2. Install dependencies:
@@ -35,7 +35,7 @@ A real-time chat application built using React for the frontend, Node.js for the
    npm install
    ```
 
-3. Create a `.env` file in the `backend` directory and add the following environment variables:
+3. Create a `.env` file in the `server` directory and add the following environment variables:
    ```env
    PORT=5000
    MONGO_URI=your_mongo_db_connection_string
@@ -54,7 +54,7 @@ A real-time chat application built using React for the frontend, Node.js for the
 
 1. Navigate to the frontend directory:
    ```bash
-   cd ../frontend
+   cd ../client
    ```
 
 2. Install dependencies:
@@ -62,7 +62,7 @@ A real-time chat application built using React for the frontend, Node.js for the
    npm install
    ```
 
-3. Create a `.env` file in the `frontend` directory and add the following environment variable:
+3. Create a `.env` file in the `client` directory and add the following environment variable:
    ```env
    REACT_APP_BACKEND_URL=http://localhost:5000
    ```
