@@ -2,6 +2,13 @@
 
 A real-time chat application built using React for the frontend, Node.js for the backend, and MongoDB for storing chat data. The application uses Socket.io for establishing real-time communication between users and Cloudinary for storing images and videos.
 
+## Usage
+
+1. Open your browser and navigate to `http://localhost:3000`.
+2. Register a new account or log in with existing credentials.
+3. Start chatting with other registered users.
+4. Share photos and videos by uploading them. The media will be stored in Cloudinary, and the links will be saved in the database.
+
 ## Features
 
 - User registration and login
